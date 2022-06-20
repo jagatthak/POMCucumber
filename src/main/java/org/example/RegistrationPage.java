@@ -22,8 +22,9 @@ public class RegistrationPage extends Utils{
     //verify register page url
     public void UserShouldVerifyRegisterUrl(){
         urltobe(10,loadprop.getProperty("urlRegister"));
-        validateURL(loadprop.getProperty("urlRegister"));
+        verifyCurrentURL(loadprop.getProperty("urlRegister"));
     }
+
     //select Radio Button for Male or Female
     public void UserShouldSelectRadioButton(){
         SelectRadioButton(_RadioButtonForMale);
@@ -37,7 +38,7 @@ public class RegistrationPage extends Utils{
         TypeText(_TextForLastName,loadprop.getProperty("lastname"));
     }
     // select BirthDay
-    public void UserShouldSelectSuccesfullyDayOfBirth(){
+    public void UserShouldSelectDayOfBirth(){
 //       try {
 //            Select Birthday = new Select(driver.findElement(_DayOfBirth ));
 //            Birthday.selectByIndex(3);}
@@ -57,7 +58,8 @@ public class RegistrationPage extends Utils{
 //        }
 
         Select BirthMonth =new Select(driver.findElement(_MonthOfBirth));
-        BirthMonth.selectByValue(loadprop.getProperty("MonthOfBirth"));}
+        BirthMonth.selectByValue(loadprop.getProperty("MonthOfBirth"));
+    }
     //select BirthYear
     public void UserShouldSelectYearOfBirth() {
 //        try {
@@ -84,6 +86,23 @@ public class RegistrationPage extends Utils{
     //Click on Register button
     public void UserShouldClickOnRegisterButton(){
         ClickElement(_RegisterButton);
+    }
+    public void UserEntersAllRegistrationDetails(){
+        SelectRadioButton(_RadioButtonForMale);
+        TypeText(_TextForFirstName, loadprop.getProperty("firstname"));
+        TypeText(_TextForLastName,loadprop.getProperty("lastname"));
+        Select Birthday = new Select(driver.findElement(_DayOfBirth));
+        Birthday.selectByValue(loadprop.getProperty("DayOfBirth"));
+        Select BirthMonth =new Select(driver.findElement(_MonthOfBirth));
+        BirthMonth.selectByValue(loadprop.getProperty("MonthOfBirth"));
+        Select BirthYear = new Select(driver.findElement(_YearOfBirth));
+        BirthYear.selectByValue(loadprop.getProperty("YearOfBirth"));
+        TypeText(_Email,loadprop.getProperty("EmailFirstPart")+RandomDate()+loadprop.getProperty("EmailSecondPart"));
+        TypeText(_Password,loadprop.getProperty("Password"));
+        TypeText(_ConfirmPassword,loadprop.getProperty("ConfirmPassword"));
+    }
+    public void enterregdetails(String field,String value){
+        TypeText(By.id(field),value);
     }
 
 }

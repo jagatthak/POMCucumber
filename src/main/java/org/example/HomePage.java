@@ -32,9 +32,12 @@ public class HomePage extends Utils{
     //Verify Homepage
     public void UserShouldVerifyHomePageUrl() {
         urltobe(10, loadprop.getProperty("urlHomePage"));
-        validateURL(loadprop.getProperty("urlHomePage"));
+        verifyCurrentURL(loadprop.getProperty("urlHomePage"));
     }
     //Click on register button
+    public void ClickOnRegisterButtonNew(String Buttonname) {
+        ClickElement(By.linkText(Buttonname));
+    }
     public void ClickOnRegisterButton() {
         ClickElement(_registrationButton);
     }
@@ -138,6 +141,10 @@ public class HomePage extends Utils{
         //Enter text in searchBox and Click on Search Button
         TypeText(_TextForSearch,loadprop.getProperty("TextForSearch"));
         ClickElement(_ClickOnSearch);
+    }
+
+    public void clickoncategorylink(String categoryName){
+        ClickElement(By.linkText(categoryName));
     }
 
 }
