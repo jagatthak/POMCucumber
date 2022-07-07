@@ -12,7 +12,7 @@ public class ComputersPage extends Utils{
     }
     public void UserShouldVerifyComputersPageUrl(){
         //Verify computer page Url
-        verifyCurrentURL(loadprop.getProperty("urlComputersPage"));
+        validateURL(loadprop.getProperty("urlComputersPage"));
 
     }
 }

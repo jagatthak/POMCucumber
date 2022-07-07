@@ -54,7 +54,7 @@ public class DesktopsPage extends Utils{
     }
 
     public void UserShouldVerifyDesktopUrl(){
-        verifyCurrentURL(loadprop.getProperty("urlDesktopPage"));
+        validateURL(loadprop.getProperty("urlDesktopPage"));
 
     }
 

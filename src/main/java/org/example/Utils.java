@@ -50,8 +50,11 @@ public class Utils extends BasePage{
     {
         driver.findElement(by).getText();
     }
-    public static void verifyCurrentURL(String url){
-        Assert.assertEquals(driver.getCurrentUrl(),url);
+    public void validateURL(String URL){
+        String ActualURL=driver.getCurrentUrl();
+        System.out.println(ActualURL);
+        String ExpectedURL =URL ;
+        Assert.assertEquals(ActualURL,ExpectedURL,"Wrong URL");
     }
     public void VerifyActualAndExpected(By by,String text){
         String ActualText = driver.findElement(by).getText();
