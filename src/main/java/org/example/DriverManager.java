@@ -19,8 +19,8 @@ public class DriverManager extends Utils{
     public  final String BrowserStackURL = "https://" + AUTOMATE_USERNAME + ":" + AUTOMATE_ACCESS_KEY + "@hub-cloud.browserstack.com/wd/hub";
     boolean cloud = Boolean.parseBoolean(System.getProperty("cloud"));
 
-    String browserName = System.getProperty("browser");
-
+    //String browserName = System.getProperty("browser");
+     String browserName =loadprop.getProperty("browser");
     public void openBrowser() {
 
         //making decision cloud true or false

@@ -20,7 +20,7 @@ public class NopcommerceNewReleasePage extends Utils{
 
     public void VerifyUrlNopcommerceNewRelease(){
         //Verify NopcommerceNewRelease URL
-        validateURL(loadprop.getProperty("urlNopCommerceNewRelease"));
+        verifyCurrentURL(loadprop.getProperty("urlNopCommerceNewRelease"));
     }
     public void VerifyNopcommerceNewReleaseTitle() {
         //Verify Title
